@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paralellogram</title>
+    <link rel="stylesheet" href="../Styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="canvas-container">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="control-container">
+        <p class="heading">Pick coordinates of corners</p>
+        <p class="description">In format x;y</p>
+        <div class="control-points-container">
+          <div class="control-point">
+            <div class="control-point-label">A:</div>
+            <div class="control-point-coordinates">
+              <input
+                type="text"
+                placeholder="0.0; 0.0"
+                class="control-point-coordinates-input"
+              />
+            </div>
+          </div>
+          <div class="control-point">
+            <div class="control-point-label">B:</div>
+            <div class="control-point-coordinates">
+              <input
+                type="text"
+                placeholder="0.0; 0.0"
+                class="control-point-coordinates-input"
+              />
+            </div>
+          </div>
+          <div class="control-point">
+            <div class="control-point-label">C:</div>
+            <div class="control-point-coordinates">
+              <input
+                type="text"
+                placeholder="0.0; 0.0"
+                class="control-point-coordinates-input"
+              />
+            </div>
+          </div>
+          <div class="control-point">
+            <div class="control-point-label">D:</div>
+            <div class="control-point-coordinates">
+              <input
+                type="text"
+                placeholder="0.0; 0.0"
+                class="control-point-coordinates-input"
+              />
+            </div>
+          </div>
+        </div>
+        <p class="wrong-format-message">Wrong format of coordinates</p>
+        <p class="wrong-interval-message">Wrong interval of coordinates: Parallellogram must be in second quarter and inside of canvas</p>
+        <p class="heading">Pick colors of diagonals</p>
+        <div class="control-diagonals-container">
+          <div class="control-diagonal">
+            <div class="control-diagonal-label">d1:</div>
+            <div class="control-diagonal-color">
+              <input type="color" />
+            </div>
+          </div>
+          <div class="control-diagonal">
+            <div class="control-diagonal-label">d2:</div>
+            <div class="control-diagonal-color">
+              <input type="color" />
+            </div>
+          </div>
+        </div>
+        <div class="control-draw">
+          <p>DRAW PARALELLOGRAM</p>
+        </div>
+      </div>
+    </main>
+
+    <script src="../Scripts/script.js"></script>
+  </body>
+</html>

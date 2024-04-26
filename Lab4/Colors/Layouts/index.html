@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Гендерно нейтральний кайфоредактор кольорів</title>
+	<link rel="stylesheet" href="../Styles/style.css"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+			href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+			rel="stylesheet">
+</head>
+<body>
+<main>
+	<div class="canvas-container">
+		<canvas id="canvas"></canvas>
+	</div>
+	<div class="control-container">
+		<div>
+			<p class="heading">Гендерно-нейтральний кайфоредактор кольорів</p>
+		</div>
+		<div class="container button" id="image-upload">
+			<img src="../Assets/icons8-upload-48.png" alt="Upload" class="icon"/>
+			<p>Завантажити зображення</p>
+		</div>
+		<!-- Hidden file input -->
+		<input type="file" id="image-input" accept="image/*" class="hidden"/>
+		<div class="container padding">
+			<p>RGB: <span id="rgb-info">R: 0, G: 0, B: 0</span></p>
+			<p>HSV: <span id="hsv-info">H: 0, S: 0, V: 0</span></p>
+		</div>
+		<div class="container">
+			<div class="row" id="color-scheme-switcher">
+				<div class="button" id="rgb-button">
+					<p>RGB</p>
+				</div>
+				<div class="button" id="hsv-button">
+					<p>HSV</p>
+				</div>
+			</div>
+			<div>
+				<!-- RGB -->
+				<div class="row padding" id="rgb-controls">
+					<div class="center">
+						<label for="controls-r">R</label>
+						<input type="checkbox" id="controls-r" checked/>
+					</div>
+					<div class="center">
+						<label for="controls-g">G</label>
+						<input type="checkbox" id="controls-g" checked/>
+					</div>
+					<div class="center">
+						<label for="controls-b">B</label>
+						<input type="checkbox" id="controls-b" checked/>
+					</div>
+				</div>
+				<!-- HSV -->
+				<div class="row padding hidden" id="hsv-controls">
+					<div class="center">
+						<label for="controls-h">H</label>
+						<input type="checkbox" id="controls-h" checked/>
+					</div>
+					<div class="center">
+						<label for="controls-s">S</label>
+						<input type="checkbox" id="controls-s" checked/>
+					</div>
+					<div class="center">
+						<label for="controls-v">V</label>
+						<input type="checkbox" id="controls-v" checked/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="button" id="change-value-for-cyan">
+				<p>Змінити значення value для ціану</p>
+			</div>
+			<input class="margin" type="range" id="cyan-slider" min="0" max="255" value="0"/>
+			<div class="row">
+				<p class="start">0</p>
+				<p class="center" id="cyan-current">0</p>
+				<p class="end">255</p>
+			</div>
+		</div>
+		<div class="container button" id="image-download">
+			<img src="../Assets/icons8-download-48.png" alt="Download" class="icon"/>
+			<p>Зберегти зображення</p>
+		</div>
+	</div>
+</main>
+
+<script src="../Scripts/script.js"></script>
+<script src="../Scripts/interface-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: Ubuntu, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  height: 100vh;
+}
+
+.canvas-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 3;
+  padding: 20px;
+  background: linear-gradient(90deg, lightblue, pink);
+}
+
+canvas {
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 90%;
+  max-height: 90vh;
+  max-width: 90vh;
+}
+
+.heading {
+  text-align: center;
+  margin: 20px;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+
+.control-container {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(90deg, pink, lightblue);
+  flex: 2;
+  overflow-y: auto;
+}
+
+
+.fractal-selectors-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.fractal-selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+#select-dragon {
+  background-color: #ffc0cb;
+}
+
+#select-algebraic {
+  background-color: #add8e6;
+}
+
+.fractal-control-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.fractal-control-container input {
+  min-width: 4rem;
+  width: 8rem;
+  padding: 5px;
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.dragon-controls {
+  background-color: rgba(255, 192, 203, 0.5);
+}
+
+.algebraic-controls {
+  background-color: rgba(173, 216, 230, 0.5);
+}
+
+.draw-button, .save-button {
+  display: flex;
+  justify-content: center;
+  font-size: 1.25rem;
+  background-color: pink;
+  padding: 0.2rem;
+  margin: 10px;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}

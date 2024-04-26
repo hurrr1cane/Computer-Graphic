@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  font-family: Ubuntu, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  height: 100vh;
+}
+
+.canvas-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 3;
+  padding: 20px;
+}
+
+canvas {
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 90%;
+  max-height: 90vh;
+  max-width: 90vh;
+}
+
+.heading {
+  text-align: center;
+  margin: 20px;
+  font-size: 2rem;
+}
+
+
+.control-container {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  background-color: #8ee4af;
+  flex: 2;
+}
+
+.curves-container {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.curves-list {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+
+}
+
+.curve-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.curve-container span {
+  flex-grow: 1;
+}
+
+.curve-container button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.curve-container .edit-curve {
+  background-color: #05386b;
+}
+
+.curve-container .remove-curve {
+  background-color: #dc3545;
+}
+
+.add-curve {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: #5cdb95;
+  color: white;
+  align-items: center;
+  align-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.show-coordinates, .show-bernstein {
+  margin: 10px;
+  padding: 10px;
+  width: auto;
+  background-color: #5cdb95;
+  color: white;
+  align-items: center;
+  align-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+.add-curve p, .show-coordinates p, .show-bernstein p{
+  text-align: center;
+  margin: 0;
+
+}
+
+.add-curve:hover, .show-coordinates:hover, .generate-coordinates:hover, .show-bernstein:hover {
+  background-color: #37966f;
+}
+
+.curve-dialog {
+  border: none;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-content input {
+  height: 30px;
+  width: auto;
+  margin: 10px;
+  padding: 0 10px;
+  border: 0.125rem solid #37966f;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.close-dialog {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  background-color: #dc3545;
+  border-radius: 50rem;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.curve-points {
+  list-style-type: none;
+  padding: 0;
+}
+
+.add-point, .save-curve, .generate-coordinates, .generate-bernstein {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5cdb95;
+  color: #fff;
+  cursor: pointer;
+}
+
+.remove-point {
+  background-color: #dc3545;
+  border-radius: 50rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.remove-point:hover, .remove-curve:hover, .close-dialog:hover {
+  background-color: #cc2535;
+}
+
+.add-point:hover, .save-curve:hover, .generate-bernstein:hover {
+  background-color: #37966f;
+}
+
+.save-curve {
+  align-self: flex-end;
+}
+
+.point {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.warning-text {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin: 0;
+  display: none;
+}
+
+.hint-text {
+  color: #05386b;
+  font-size: 0.8rem;
+  margin: 0;
+  display: none;
+  align-self: center;
+}
+
+.coordinates-dialog, .bernstein-dialog {
+  border: none;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}

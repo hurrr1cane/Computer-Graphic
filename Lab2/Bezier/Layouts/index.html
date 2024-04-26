@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мачохлопчачий кайфоредактор кривих Безье</title>
+    <link rel="stylesheet" href="../Styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="canvas-container">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="control-container">
+        <p class="heading">Мачохлопчачий кайфоредактор кривих Безьє</p>
+        <div class="curves-container">
+          <ul id="curves-list" class="curves-list">
+            <!-- List of curves will be dynamically added here -->
+          </ul>
+          <div class="add-curve">
+            <p>Додати криву</p>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="checkbox-draw-with-parameter"
+              value="Малювати за параметричною формулою"
+            />
+            <label for="checkbox-draw-with-parameter"
+              >Малювати за параметричною формулою</label
+            >
+          </div>
+        </div>
+
+        <div class="show-coordinates">
+          <p>Вивести координати кривої</p>
+        </div>
+        <div class="show-bernstein">
+          <p>Обчислити значення поліномів Бернштейна</p>
+        </div>
+        <p class="hint-text warning-select-curve">Оберіть криву</p>
+      </div>
+    </main>
+
+    <dialog id="curve-dialog" class="curve-dialog">
+      <div class="dialog-content">
+        <button id="close-dialog" class="close-dialog">X</button>
+        <h2>Додати/Редагувати криву Безьє</h2>
+        <label for="curve-name">Назва:</label>
+        <input
+          type="text"
+          id="curve-name"
+          name="curve-name"
+          autocomplete="off"
+        />
+        <p class="warning-text warning-name">Назва повинна бути вказана</p>
+        <label for="curve-color">Колір:</label>
+        <input type="color" id="curve-color" name="curve-color" />
+        <label for="curve-points">Точки:</label>
+        <ul id="curve-points" class="curve-points">
+          <!-- List of points will be dynamically added here -->
+        </ul>
+        <p class="warning-text warning-not-enough-points">
+          Точок повинно бути хоча б дві
+        </p>
+        <p class="warning-text warning-points">
+          Точки повинні бути вказані і в межах видимої координатної площини
+        </p>
+        <button id="add-point" class="add-point">Додати точку</button>
+        <button id="save-curve" class="save-curve">Зберегти</button>
+      </div>
+    </dialog>
+
+    <dialog id="coordinates-dialog" class="coordinates-dialog">
+      <div class="dialog-content">
+        <button id="close-coordinates-dialog" class="close-dialog">X</button>
+        <h2>Координати кривої</h2>
+        <label for="number-of-coordinates">Введіть кількість точок</label>
+        <input
+          type="number"
+          id="number-of-coordinates"
+          name="number-of-coordinates"
+          min="1"
+          max="100"
+          value="1"
+        />
+        <button id="generate-coordinates" class="generate-coordinates">
+          Згенерувати
+        </button>
+        <ol id="coordinates-list" class="coordinates-list">
+          <!-- List of coordinates will be dynamically added here -->
+        </ol>
+      </div>
+    </dialog>
+
+    <dialog id="bernstein-dialog" class="bernstein-dialog">
+      <div class="dialog-content">
+        <button id="close-bernstein-dialog" class="close-dialog">X</button>
+        <h2>Значення поліномів Бернштейна</h2>
+        <label for="bernstein-min-t">Введіть Мінімальне t</label>
+        <input
+          type="number"
+          id="bernstein-min-t"
+          name="bernstein-min-t"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0"
+        />
+        <p class="warning-text warning-min-t">Мінімальне t повинно бути в межах від 0 до 1</p>
+        <label for="bernstein-max-t">Введіть Максимальне t</label>
+        <input
+          type="number"
+          id="bernstein-max-t"
+          name="bernstein-max-t"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+        />
+        <p class="warning-text warning-max-t">Максимальне t повинно бути в межах від 0 до 1 і більшим від мінімального</p>
+        <label for="bernstein-i">Введіть i</label>
+        <input
+          type="number"
+          id="bernstein-i"
+          name="bernstein-i"
+          min="0"
+          max="100"
+          value="0"
+        />
+        <p class="warning-text warning-i">i повинно бути цілим числом, в межах від 0 до n-1</p>
+        <button id="generate-bernstein" class="generate-bernstein">
+          Обчислити
+        </button>
+        <ol id="bernstein-list" class="bernstein-list">
+          <!-- List of bernstein values will be dynamically added here -->
+        </ol>
+      </div>
+    </dialog>
+
+    <script src="../Scripts/script.js"></script>
+    <script src="../Scripts/curves-interface.js"></script>
+  </body>
+</html>

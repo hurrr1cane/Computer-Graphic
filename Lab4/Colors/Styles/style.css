@@ -1,0 +1,243 @@
+* {
+	font-family: Sofia Sans, Comfortaa, Ubuntu, sans-serif;
+	color: white;
+}
+
+p {
+	margin: 0.4rem 0.4rem;
+	font-size: 1.1em;
+}
+
+input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 1rem;
+	height: 1rem;
+	border: 2px solid #ccc;
+	border-radius: 100%;
+	cursor: pointer;
+	outline: none;
+	vertical-align: middle;
+	position: relative;
+	transition: background-color 0.3s;
+}
+input[type="checkbox"]:checked {
+	background-color: rgba(255, 255, 255, 0.6);
+}
+input[type="checkbox"]:checked:after{
+	display: none;
+}
+input[type="checkbox"]:focus {
+	border-color: #333;
+}
+input[type="checkbox"]:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+input[type="checkbox"]:checked:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+input[type="range"] {
+	-webkit-appearance: none;
+	height: 1rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 100%;
+	background-color: white;
+	cursor: pointer;
+}
+
+
+body {
+	margin: 0;
+	background: linear-gradient(to right, rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 27%, rgb(241, 235, 27), rgb(241, 235, 27) 33%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142));
+}
+/*
+body{
+	margin: 0;
+	background: linear-gradient(90deg, #d70a74, #9e5599, #083eab);
+}*/
+
+main {
+	display: flex;
+	flex-direction: row;
+	justify-content: stretch;
+	height: 100vh;
+}
+
+.canvas-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 3;
+	padding: 20px;
+	/*background: linear-gradient(90deg, lightblue, pink);*/
+}
+
+canvas {
+	background-color: white;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	width: 90%;
+	max-height: 90vh;
+	max-width: 90vh;
+}
+
+.heading {
+	text-align: center;
+	margin: 2rem 20px 20px;
+	font-size: 2rem;
+}
+
+
+.control-container {
+	display: flex;
+	flex-direction: column;
+	flex: 2;
+	overflow-y: auto;
+	justify-content: center;
+}
+
+.container {
+	backdrop-filter: blur(2rem);
+	border-radius: 1rem;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.1);
+	margin: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+}
+
+.button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	user-select: none;
+}
+
+.button:hover {
+	background-color: rgba(0,0, 0, 0.2);
+}
+
+.button.active {
+	/* Gradient border */
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
+
+.button.active > p {
+	text-decoration: underline
+}
+
+
+
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 2rem;
+	background-size: cover;
+	margin: 0.2rem;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+.row > * {
+	flex: 1;
+}
+
+.padding {
+	padding: 0.5rem;
+}
+
+.margin {
+	margin: 0.5rem;
+
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#rgb-button {
+	border-radius: 1rem 0 0 0;
+}
+#hsv-button {
+	border-radius: 0 1rem 0 0;
+}
+#change-value-for-cyan {
+	border-radius: 1rem 1rem 0 0;
+}
+
+.hidden {
+	display: none;
+}
+.start {
+	text-align: start;
+}
+.end {
+	text-align: end;
+}
+
+@media screen and (width> 1020px) {
+	body {
+		padding: 0 5%;
+	}
+}
+
+@media screen and (max-width: 600px) and (min-width: 400px) {
+	main {
+		flex-direction: column;
+	}
+	.canvas-container {
+		max-height: 20rem;
+	}
+	
+	canvas {
+		max-height: 20rem;
+		width: 20rem;
+	}
+	
+	.control-container {
+		justify-content: flex-start;
+	}
+	
+}
+
+@media screen and (max-width: 400px) {
+	main {
+		flex-direction: column;
+	}
+	.canvas-container {
+		max-height: 15rem;
+	}
+	
+	canvas {
+		max-height: 15rem;
+		width: 15rem;
+	}
+	
+	.control-container {
+		justify-content: flex-start;
+	}
+}
+
