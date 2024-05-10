@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Без поняття кайфоредактор афінних перетворень</title>
+	<link rel="stylesheet" href="../Styles/style.css"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+			href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+			rel="stylesheet">
+</head>
+<body>
+<main>
+	<div class="canvas-container">
+		<canvas id="canvas"></canvas>
+	</div>
+	<div class="control-container">
+		<div>
+			<p class="heading">Без поняття кайфоредактор афінних перетворень</p>
+		</div>
+		<div class="container padding column margins-between">
+			<p>Координати трикутника</p>
+			<div class="row">
+				<label for="x1">X1: </label>
+				<input id="x1" type="number" placeholder="X1">
+				<div class="margin"></div>
+				<label for="y1">Y1: </label>
+				<input id="y1" type="number" placeholder="Y1">
+			</div>
+			<div class="row">
+				<label for="x2">X2: </label>
+				<input id="x2" type="number" placeholder="X2">
+				<div class="margin"></div>
+				<label for="y2">Y2: </label>
+				<input id="y2" type="number" placeholder="Y2">
+			</div>
+			<div class="row">
+				<label for="x3">X3: </label>
+				<input id="x3" type="number" placeholder="X3">
+				<div class="margin"></div>
+				<label for="y3">Y3: </label>
+				<input id="y3" type="number" placeholder="Y3">
+			</div>
+		</div>
+		<div class="container padding column margins-between">
+			<p>Координати точки</p>
+			<p class="small">відносно якої відбувається відображення</p>
+			<div class="row">
+				<label for="x">X: </label>
+				<input id="x" type="number" placeholder="X">
+			</div>
+			<div class="row">
+				<label for="y" >Y: </label>
+				<input id="y" type="number" placeholder="Y">
+			</div>
+			<div class="margin"></div>
+			<p>Коефіцієнт збільшення</p>
+			<div class="row">
+				<label for="k">K: </label>
+				<input id="k" type="number" placeholder="K">
+			</div>
+		</div>
+		<p class="error center hidden" id="verification-all-error">Правильно заповніть усі поля</p>
+		<div class="container column">
+			<div class="button" id="start-animation">
+				<p>Почати анімацію</p>
+			</div>
+			<div class="button" id="stop-animation">
+				<p>Зупинити анімацію</p>
+			</div>
+		</div>
+		<div class="container column">
+			<div class="button" id="save-matrix">
+				<p>Зберегти матрицю</p>
+			</div>
+			<div class="button" id="save-image">
+				<p>Зберегти зображення</p>
+			</div>
+		</div>
+	</div>
+</main>
+
+<script src="../Scripts/script.js"></script>
+<script src="../Scripts/interface-script.js"></script>
+</body>
+</html>
