@@ -33,24 +33,60 @@ const x2 = document.getElementById('x2');
 const y2 = document.getElementById('y2');
 const x3 = document.getElementById('x3');
 const y3 = document.getElementById('y3');
-const x = document.getElementById('x');
-const y = document.getElementById('y');
 const k = document.getElementById('k');
 
-const startAnimation = document.getElementById('start-animation');
-const stopAnimation = document.getElementById('stop-animation');
-const saveMatrix = document.getElementById('save-matrix');
-const saveImage = document.getElementById('save-image');
+const startAnimationButton = document.getElementById('start-animation');
+const stopAnimationButton = document.getElementById('stop-animation');
+const saveMatrixButton = document.getElementById('save-matrix');
+const saveImageButton = document.getElementById('save-image');
 
 const verificationAllError = document.getElementById('verification-all-error');
 
-startAnimation.addEventListener('click', (event) => {
+startAnimationButton.addEventListener('click', (event) => {
   if (verifyAllFields()) {
-  
+    try {
+      startAnimation(x1.value, x2.value, x3.value, y1.value, y2.value, y3.value, k.value);
+    } catch (error) {
+      showError();
+    }
   }
 });
 
-saveImage.addEventListener('click', (event) => {
+stopAnimationButton.addEventListener('click', (event) => {
+  pauseAnimation();
+});
+
+saveMatrixButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  const matrix = getMatrix();
+  if (matrix) {
+    const a = document.createElement('a');
+    a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(matrix);
+    // Set the file name as the current date and time
+    a.download = 'No-clue-kayfoeditor-of-changes-' + new Date().toISOString() + '.txt';
+    a.click();
+    a.remove();
+  } else {
+    if (verifyAllFields()) {
+      try {
+        startAnimation(x1.value, x2.value, x3.value, y1.value, y2.value, y3.value, k.value);
+        
+        const matrix = getMatrix();
+        
+        const a = document.createElement('a');
+        a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(matrix);
+        // Set the file name as the current date and time
+        a.download = 'No-clue-kayfoeditor-of-changes-' + new Date().toISOString() + '.txt';
+        a.click();
+        a.remove();
+      } catch (error) {
+        showError();
+      }
+    }
+  }
+});
+
+saveImageButton.addEventListener('click', (event) => {
     event.preventDefault();
     const image = getImage();
     const a = document.createElement('a');
@@ -92,25 +128,24 @@ function verifyAllFields() {
   if (!verifyField(y3)) {
     error = true;
   }
-  if (!verifyField(x)) {
-    error = true;
-  }
-  if (!verifyField(y)) {
-    error = true;
-  }
   if (!verifyField(k)) {
     error = true;
   }
   
+  
   if (error) {
     // Remove hidden class for 3 seconds
-    verificationAllError.classList.remove('hidden');
-    setTimeout(() => {
-      verificationAllError.classList.add('hidden');
-    }, 3000);
+    showError();
   }
   
   return !error;
+}
+
+function showError() {
+  verificationAllError.classList.remove('hidden');
+  setTimeout(() => {
+    verificationAllError.classList.add('hidden');
+  }, 3000);
 }
 
 function verifyField(field) {
@@ -124,3 +159,4 @@ function verifyField(field) {
   return field.value !== '';
 }
 
+drawGrid();
